@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "PPE-Angular": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PPE-Angular"
+    }
+  },
+  "defaultProject": "PPE-Angular",
+  "cli": {
+    "analytics": "002f16e0-0532-49ea-a6b9-d98cb0f9b919"
+  }
 }
