@@ -1,0 +1,51 @@
+div.back
+{
+  background-color: #F1F5FB;
+  min-height: 94.45vh;
+}
+
+div.form
+{
+  margin-top : 50px;
+  width: 80%;
+  height : 90%;
+  background-color: white;
+}
+
+div.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.text {
+  margin: 30px 20px;
+}
+
+div.text p {
+  color: #368BFF;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  color : #368BFF;
+}
+
+td {
+  color : #175DBE;
+}
+
+a.button {
+  cursor: pointer;
+}
+
+a.button:visited {
+  color:#175DBE;
+}
+
