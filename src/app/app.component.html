@@ -1,1 +1,41 @@
-<app-accueil></app-accueil>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand">PPE-Angular</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/']">Accueil</a>
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown" routerLinkActive="active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medicaments</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['ListeMedicaments']"> Afficher Médicaments</a>
+          <a class="dropdown-item" [routerLink]="['RechercherMedicaments']">Rechercher Médicaments</a>
+        </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['ListeMedecins']">Liste Médecins</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['ListeVisites']">Rapports Visite</a>
+      </li>
+    </ul>
+    <span>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" routerLinkActive="active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jean NEYMAR</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['logout']">Déconnexion</a>
+          </div>
+        </li>
+      </ul>
+    </span>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
