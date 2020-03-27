@@ -49,3 +49,18 @@ a.button {
 a.button:visited {
   color:#175DBE;
 }
+
+.modal-header{
+    background-color: #175DBE;
+    color: white;
+}
+
+strong{
+    color: #175DBE;
+}
+
+
+tbody tr th a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
