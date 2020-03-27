@@ -20,7 +20,7 @@ export class MedecinsListeComponent implements OnInit {
         this.medecins = medecins;
       }
     );
-    // this.medecinService.emitMedecinSubject();
+    this.medecinService.emitMedecinSubject();
     this.getAllMedecins();
   }
 
