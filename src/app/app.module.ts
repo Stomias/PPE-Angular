@@ -13,6 +13,9 @@ const appRoutes: Routes = [
   { path: 'ListeMedicaments', component: MedicamentsListeComponent },
   { path: 'ListeMedecins', component: MedecinsListeComponent },
   { path: 'ListeVisites', component: VisitesListeComponent },
+  { path: '**', component: AccueilComponent },
+  { path: 'ModifRapport', component: AccueilComponent },
+  { path: 'AjoutRapport', component: AccueilComponent },
 ]
 
 @NgModule({

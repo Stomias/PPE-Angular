@@ -1,0 +1,4 @@
+.navbar-brand:after{
+    content: "|";
+    margin-left: 1vw;
+}
