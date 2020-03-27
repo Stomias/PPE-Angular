@@ -1,1 +1,34 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand">PPE-Angular</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/']">Accueil</a>
+            </li>
+            <li class="nav-item">
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['ListeMedicaments']">Médicaments</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['ListeMedecins']">Médecins</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['ListeVisites']">Rapports Visite</a>
+            </li>
+        </ul>
+        <span>
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jean NEYMAR</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]="['logout']">Déconnexion</a>
+                </div>
+            </li>
+            </ul>
+        </span>
+    </div>
+</nav>
