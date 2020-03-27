@@ -23,31 +23,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Martin</td>
-              <td>Prosper</td>
-              <td>25 rue Anatole France BRIANCON 05100</td>
-              <td>04 85 24 41 74</td>
-              <td></td>
-              <td>5</td>
-              <td><a class="button"><img src="..\assets\images\icons8-more-24.png"/></a></td>
-            </tr>
-            <tr>
-              <td>BLANC</td>
-              <td>Anne-Lucie</td>
-              <td>39 rue des gatinnes BILLIAT 01200</td>
-              <td>03 56 89 54 00</td>
-              <td>Pédiatre</td>
-              <td>1</td>
-              <td><a class="button"><img src="..\assets\images\icons8-more-24.png"/></a></td>
-            </tr>
-            <tr>
-              <td>GARCIA</td>
-              <td>Camille</td>
-              <td>58 rue du stade MESSINCOURT 08110</td>
-              <td>03 65 48 99 29</td>
-              <td></td>
-              <td>8</td>
+            <tr *ngFor="let medecin of medecins">
+              <td>{{ medecin.nom }}</td>
+              <td>{{ medecin.prenom }}</td>
+              <td>{{ medecin.adresse }}</td>
+              <td>{{ medecin.numTel }}</td>
+              <td>{{ medecin.specialiteComplementaire }}</td>
+              <td>{{ medecin.departement }}</td>
               <td><a class="button"><img src="..\assets\images\icons8-more-24.png"/></a></td>
             </tr>
           </tbody>

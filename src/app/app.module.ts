@@ -7,6 +7,8 @@ import { MedecinsListeComponent } from './medecins-liste/medecins-liste.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { VisitesListeComponent } from './visites-liste/visites-liste.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { MedecinService } from 'src/app/services/medecin.service';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -26,9 +28,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [MedecinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
