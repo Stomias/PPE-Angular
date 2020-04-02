@@ -12,19 +12,19 @@ export class MedicamentsListeComponent implements OnInit {
 
   medicaments: any[];
   medicamentSubscription: Subscription;
-  constructor(private medecinService: MedicamentService) { }
+  constructor(private medicamentService: MedicamentService) { }
 
   ngOnInit(): void {
     this.getAllMedecins();
-    this.medicamentSubscription = this.medecinService.medicamentSubject.subscribe(
+    this.medicamentSubscription = this.medicamentService.medicamentSubject.subscribe(
       (medicaments: any[]) => {
         this.medicaments = medicaments;
       }
     );
-    this.medecinService.emitMedecinSubject();
+    this.medicamentService.emitMedecinSubject();
   }
 
   getAllMedecins() {
-    this.medecinService.getAllMedicaments();
+    this.medicamentService.getAllMedicaments();
   }
 }
