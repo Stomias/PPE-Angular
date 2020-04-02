@@ -11,7 +11,7 @@ export class MedecinService {
 
   medecinSubject = new Subject<any[]>();
 
-  private medecins: any[];
+  private medecins: any[] = [];
 
   emitMedecinSubject() {
     this.medecinSubject.next(this.medecins.slice());
@@ -23,11 +23,9 @@ export class MedecinService {
   getAllMedecins() {
     this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?noms`).subscribe(
       (response) => {
-
         this.medecins = response;
         console.log('Chargement réussie\n' + this.medecins[10].nom);
         this.emitMedecinSubject();
-
       }
     );
   }

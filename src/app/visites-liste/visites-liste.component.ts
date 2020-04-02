@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { RapportService } from '../services/rapport.service';
+import { Rapport } from '../models/Rapport.model';
 
 @Component({
   selector: 'app-visites-liste',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisitesListeComponent implements OnInit {
 
-  constructor() { }
+  rapports: Rapport[] = [];
+  rapportSubscription: Subscription;
+  constructor(private rapportService: RapportService) { }
 
   ngOnInit(): void {
+    this.getAllRapport();
+    this.rapportSubscription = this.rapportService.rapportSubject.subscribe(
+      (rapports: any[]) => {
+        this.rapports = rapports;
+      }
+    );
+    this.rapportService.emitRapportSubject();
+  }
+
+  getAllRapport() {
+    this.rapportService.getAllRapport();
   }
 
 }
