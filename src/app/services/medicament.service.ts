@@ -11,7 +11,7 @@ export class MedicamentService {
 
   medicamentSubject = new Subject<any[]>();
 
-  private medicaments: any[];
+  private medicaments: any[] = [];
 
   emitMedecinSubject() {
     this.medicamentSubject.next(this.medicaments.slice());
