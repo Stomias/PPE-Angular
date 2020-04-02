@@ -9,12 +9,14 @@ import { VisitesListeComponent } from './visites-liste/visites-liste.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MedecinService } from 'src/app/services/medecin.service';
+import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'ListeMedicaments', component: MedicamentsListeComponent },
   { path: 'ListeMedecins', component: MedecinsListeComponent },
   { path: 'ListeVisites', component: VisitesListeComponent },
+  { path: 'ListeMedecins/:id', component : MedecindetailsComponent},
   { path: '**', component: AccueilComponent },
   { path: 'ModifRapport', component: AccueilComponent },
   { path: 'AjoutRapport', component: AccueilComponent },
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     MedicamentsListeComponent,
     MedecinsListeComponent,
     NavbarComponent,
-    VisitesListeComponent
+    VisitesListeComponent,
+    MedecindetailsComponent
   ],
   imports: [
     BrowserModule,

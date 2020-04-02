@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 50%;
+  color: #175DBE;
+}
+
+.form-container .submitbutton
+{
+  margin-top: 10px;
+  width: 11%;
+  color: white;
+  background-color: #368bff;
+  /* font-size: 12px; */
+}
+
+.form-container .backbutton
+{
+  margin-bottom: 15px;
+  width: 14%;
+  color: white;
+  background-color: #368bff;
+  /* font-size: 12px; */
+}
+
+.form-container .placeholder {
+  color : #175DBE;
+}

@@ -29,4 +29,14 @@ export class MedecinService {
       }
     );
   }
+
+  getMedecinByID(id: string) {
+    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?id=${id}/`).subscribe(
+      (response) => {
+        this.medecins = response;
+        console.log('Chargement réussie\n' + this.medecins[0].nom);
+        this.emitMedecinSubject();
+      }
+    );
+  }
 }

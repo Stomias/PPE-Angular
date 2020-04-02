@@ -1,0 +1,42 @@
+<div class="back">
+  <div class="center">
+    <div class="form">
+      <div class="text">
+        <p>Modification du médecin</p>
+        <form class="form-container">
+          <a routerLink='/ListeMedecins'>
+            <button class="backbutton btn btn-primary">Retour</button>
+          </a>
+          <div class="form-group">
+            <label class="placeholder">Nom</label>
+            <input id="nom" class="form-control" value="{{ this.medecins[0].nom }}">
+          </div>
+          <div class="form-group">
+            <label class="placeholder">Prénom</label>
+            <input id="prenom" class="form-control" value="{{ this.medecins[0].prenom }}">
+          </div>
+          <div class="form-group">
+            <label class="placeholder">Adresse</label>
+            <input id="adresse" class="form-control" value="{{ this.medecins[0].adresse }}">
+          </div>
+          <div class="form-group">
+            <label class="placeholder">N° Téléphone</label>
+            <input id="tel" class="form-control" value="{{ this.medecins[0].tel }}">
+          </div>
+          <div class="form-group">
+            <label class="placeholder">Spécialité complémentaire</label>
+            <input id="specialitecomplementaire" class="form-control" value="{{ this.medecins[0].specialitecomplementaire }}">
+          </div>
+          <div class="form-group">
+            <label class="placeholder">Département</label>
+            <input id="departement" class="form-control" value="{{ this.medecins[0].departement }}">
+          </div>
+          <!-- Affichage de la réussite ou de l'échec de l'envoi -->
+          <!-- <p *ngIf="success" class="green">Vos modifications ont été pris en compte !</p> -->
+          <button type="submit" class="submitbutton btn btn-primary" disabled>Enregistrer</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
