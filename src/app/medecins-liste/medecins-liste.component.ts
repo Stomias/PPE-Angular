@@ -15,13 +15,13 @@ export class MedecinsListeComponent implements OnInit {
   constructor(private medecinService: MedecinService) { }
 
   ngOnInit(): void {
+    this.getAllMedecins();
     this.medecinSubscription = this.medecinService.medecinSubject.subscribe(
       (medecins: any[]) => {
         this.medecins = medecins;
       }
     );
     this.medecinService.emitMedecinSubject();
-    this.getAllMedecins();
   }
 
   getAllMedecins() {

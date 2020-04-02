@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://webserv-gr1.sio-carriat.com/gsbapi'
 };
 
 /*

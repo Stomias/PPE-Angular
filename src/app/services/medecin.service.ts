@@ -21,7 +21,7 @@ export class MedecinService {
 
   // Recupère les médecins
   getAllMedecins() {
-    this.http.get<any[]>(`${environment.apiUrl}/?noms`).subscribe(
+    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?noms`).subscribe(
       (response) => {
 
         this.medecins = response;
