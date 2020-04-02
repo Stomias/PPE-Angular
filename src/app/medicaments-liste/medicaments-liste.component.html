@@ -24,41 +24,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row" ><a data-toggle="modal" data-target="#exampleModal" >ADIMOL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >AMOPIL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >AMOXAR</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >ADIMOL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >AMOPIL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >AMOXAR</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >ADIMOL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal" >AMOPIL</a></th>
-              <td>Antibiotique</td>
-            </tr>
-            <tr>
-              <th scope="row"><a data-toggle="modal" data-target="#exampleModal">AMOXAR</a></th>
-              <td>Antibiotique</td>
+            <tr *ngFor="let medicament of medicaments; let i = index">
+              <th scope="row" ><a data-toggle="modal" data-target="#Modal{{i}}" >{{ medicament.nomCommercial }}</a></th>
+              <td>{{ medicament.idFamille }}</td>
             </tr>
             
           </tbody>
@@ -67,23 +35,21 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div *ngFor="let medicament of medicaments; let i = index" class="modal fade" id="Modal{{i}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ADIMOL</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ medicament.nomCommercial }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p><strong>Famille: </strong>Antibiotique</p>
-        <p><strong>Dépot légal: </strong>ADIMOL9</p>
-        <p><strong>Composition: </strong>Amoxicilline</p>
-        <p><strong>Effets secondaire: </strong>Ce mediargrgrogj,gjvrrtvgr,b_bnsrt_trhtrh,brth</p>
-        <p><strong>Contre-indication: </strong>Ce médicament est contre-indiqué egrgr htrh rths thrt thtthth trrr</p>
-        <p><strong>Prix d'un échantillon: </strong>9.00</p>
+        <p><strong>Famille: </strong>{{ medicament.idFamille }}</p>
+        <p><strong>Dépot légal: </strong>{{ medicament.id }}</p>
+        <p><strong>Composition: </strong>Amox{{ medicament.compostition }}cilline</p>
+        <p><strong>Effets secondaire: </strong>{{ medicament.effets }}</p>
+        <p><strong>Contre-indication: </strong>{{ medicament.contreIndications }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
@@ -91,3 +57,5 @@
     </div>
   </div>
 </div>
+
+
