@@ -12,7 +12,7 @@ import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
 
 // Pagination
-import { JwPaginationComponent } from 'jw-angular-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -22,8 +22,8 @@ const appRoutes: Routes = [
   { path: 'ListeMedecins/:id', component : MedecindetailsComponent},
   { path: '**', component: AccueilComponent },
   { path: 'ModifRapport', component: AccueilComponent },
-  { path: 'AjoutRapport', component: AccueilComponent },
-]
+  { path: 'AjoutRapport', component: AccueilComponent }
+];
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     VisitesListeComponent,
     MedecindetailsComponent,
-    JwPaginationComponent
+    NgbModule
   ],
   imports: [
     BrowserModule,
