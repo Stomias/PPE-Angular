@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
 
+// Pagination
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'ListeMedicaments', component: MedicamentsListeComponent },
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
     MedecinsListeComponent,
     NavbarComponent,
     VisitesListeComponent,
-    MedecindetailsComponent
+    MedecindetailsComponent,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
