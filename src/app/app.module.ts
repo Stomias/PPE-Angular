@@ -12,7 +12,6 @@ import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
 
 // Pagination
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -33,8 +32,7 @@ const appRoutes: Routes = [
     MedecinsListeComponent,
     NavbarComponent,
     VisitesListeComponent,
-    MedecindetailsComponent,
-    NgbModule
+    MedecindetailsComponent
   ],
   imports: [
     BrowserModule,
