@@ -25,13 +25,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let rapport of rapports | slice: (1-1) * 10 : (1-1) * 10 + 10">
+            <tr *ngFor="let rapport of rapports | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
               <td> {{ rapport.date }} </td>
               <td> {{ rapport.motif }} </td>
               <td> {{ rapport.bilan }} </td>
             </tr>
           </tbody>
         </table>
+
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="rapports.length" [pageSize]="pageSize" [(page)]="page"></ngb-pagination>
+
       </div>
     </div>
   </div>

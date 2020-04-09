@@ -11,7 +11,7 @@ export class MedecinService {
 
   medecinSubject = new Subject<any[]>();
 
-  private medecins: any[] = [];
+  private medecins: Medecin[] = [];
 
   emitMedecinSubject() {
     this.medecinSubject.next(this.medecins.slice());
@@ -34,7 +34,18 @@ export class MedecinService {
     this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?id=${id}/`).subscribe(
       (response) => {
         this.medecins = response;
-        console.log('Chargement réussie\n' + this.medecins[0].nom);
+        console.log('Chargement réussie\n' + this.medecins[0].tel);
+        this.emitMedecinSubject();
+      }
+    );
+  }
+
+  updateMedecinDetails(id: string, adresse: string, tel: string, spe: string) {
+    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?id2=${id}&adresse=${adresse}&tel=${tel}&speComplementaire=${spe}/`)
+    .subscribe(
+      (response) => {
+        this.medecins = response;
+        console.log('Chargement réussie\n' + this.medecins[0].tel);
         this.emitMedecinSubject();
       }
     );

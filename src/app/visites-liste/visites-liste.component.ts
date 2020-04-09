@@ -13,7 +13,8 @@ export class VisitesListeComponent implements OnInit {
   rapports: Rapport[] = [];
   rapportSubscription: Subscription;
   constructor(private rapportService: RapportService) { }
-
+  page = 1;
+  pageSize = 15;
   ngOnInit(): void {
     this.getAllRapport();
     this.rapportSubscription = this.rapportService.rapportSubject.subscribe(
