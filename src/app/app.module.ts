@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Pagination
 
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbPaginationModule
   ],
   providers: [MedecinService],
   bootstrap: [AppComponent]
