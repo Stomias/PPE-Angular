@@ -13,7 +13,7 @@ export class MedicamentService {
 
   private medicaments: any[] = [];
 
-  emitMedecinSubject() {
+  emitMedicamentSubject() {
     this.medicamentSubject.next(this.medicaments.slice());
   }
 
@@ -26,7 +26,7 @@ export class MedicamentService {
 
         this.medicaments = response;
         console.log('Chargement réussie\n' + this.medicaments[10].nomCommercial);
-        this.emitMedecinSubject();
+        this.emitMedicamentSubject();
 
       }
     );

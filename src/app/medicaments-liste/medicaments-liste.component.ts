@@ -15,16 +15,16 @@ export class MedicamentsListeComponent implements OnInit {
   constructor(private medicamentService: MedicamentService) { }
 
   ngOnInit(): void {
-    this.getAllMedecins();
+    this.getAllMedicaments();
     this.medicamentSubscription = this.medicamentService.medicamentSubject.subscribe(
       (medicaments: any[]) => {
         this.medicaments = medicaments;
       }
     );
-    this.medicamentService.emitMedecinSubject();
+    this.medicamentService.emitMedicamentSubject();
   }
 
-  getAllMedecins() {
+  getAllMedicaments() {
     this.medicamentService.getAllMedicaments();
   }
 }

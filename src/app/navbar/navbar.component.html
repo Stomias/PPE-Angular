@@ -11,26 +11,27 @@
             <li class="nav-item">
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['ListeMedicaments']">Médicaments</a>
+            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeMedicaments']">Médicaments</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['ListeMedecins']">Médecins</a>
+            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeMedecins']">Médecins</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['ListeVisites']">Rapports Visite</a>
+            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeVisites']">Rapports Visite</a>
             </li>
         </ul>
-        <span>
-            <ul class="navbar-nav mr-auto">
+        
+        <span *ngIf="getLogin()">
+            <ul  class="navbar-nav mr-auto">
                 <li class="nav-item dropdown" routerLinkActive="active">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
                         <svg class="bi bi-person-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                         </svg>
-                        Jean NEYMAR
+                        {{getLogin()}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['logout']">Déconnexion</a>
+                    <a class="dropdown-item" [routerLink]="['logout']" (click)='logout()'>Déconnexion</a>
                     </div>
                 </li>
             </ul>

@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
+import { FormsModule } from '@angular/forms';
 
 // Pagination
 
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     MedecindetailsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
