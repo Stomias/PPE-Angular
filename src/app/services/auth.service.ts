@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   getVisiteurByID(id: string) {
-    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?login=${id}/`).subscribe(
+    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?login=${id}`).subscribe(
       (response) => {
         this.visiteurs = response;
         console.log('Chargement réussie\n' + this.visiteurs[0].nom);
