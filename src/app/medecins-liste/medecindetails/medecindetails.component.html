@@ -3,17 +3,17 @@
     <div class="form">
       <div class="text">
         <p>Modification du médecin</p>
-        <form class="form-container">
+        <form class="form-container" (ngSubmit)="updateMedecinDetails(this.id[2],this.medecins[0].adresse,this.medecins[0].tel,this.medecins[0].specialitecomplementaire)">
           <a routerLink='/ListeMedecins'>
             <button class="backbutton btn btn-primary">Retour</button>
           </a>
           <div class="form-group">
             <label class="placeholder">Nom</label>
-            <input id="nom" class="form-control" value="{{ this.medecins[0].nom }}">
+            <input id="nom" class="form-control" value="{{ this.medecins[0].nom }}" readonly>
           </div>
           <div class="form-group">
             <label class="placeholder">Prénom</label>
-            <input id="prenom" class="form-control" value="{{ this.medecins[0].prenom }}">
+            <input id="prenom" class="form-control" value="{{ this.medecins[0].prenom }}" readonly>
           </div>
           <div class="form-group">
             <label class="placeholder">Adresse</label>
@@ -29,12 +29,36 @@
           </div>
           <div class="form-group">
             <label class="placeholder">Département</label>
-            <input id="departement" class="form-control" value="{{ this.medecins[0].departement }}">
+            <input id="departement" class="form-control" value="{{ this.medecins[0].departement }}" readonly>
           </div>
           <!-- Affichage de la réussite ou de l'échec de l'envoi -->
           <!-- <p *ngIf="success" class="green">Vos modifications ont été pris en compte !</p> -->
-          <button type="submit" class="submitbutton btn btn-primary" disabled>Enregistrer</button>
-      </form>
+          <button type="submit" class="submitbutton btn btn-primary">Enregistrer</button>
+        </form>
+      <!-- Améliorer le design -->
+      <p>Les rapports de visites du médecin</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Motif</th>
+            <th scope="col">Bilan</th>
+            <th scope="col">ID Visiteur</th>
+            <th scope="col">Détails</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rapport of rapports">
+            <td>{{ rapport.id }}</td>
+            <td>{{ rapport.date }}</td>
+            <td>{{ rapport.motif }}</td>
+            <td>{{ rapport.bilan }}</td>
+            <td>{{ rapport.idVisiteur }}</td>
+            <td><a class="button" routerLink="{{rapport.id}}" disabled><img src="..\assets\images\icons8-more-24.png"/></a></td>
+          </tr>
+        </tbody>
+      </table>
       </div>
     </div>
   </div>
