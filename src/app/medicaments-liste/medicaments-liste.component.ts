@@ -13,6 +13,8 @@ export class MedicamentsListeComponent implements OnInit {
   medicaments: any[];
   medicamentSubscription: Subscription;
   constructor(private medicamentService: MedicamentService) { }
+  index: string = '0';
+  unMedicament: any[];
 
   ngOnInit(): void {
     this.getAllMedicaments();
@@ -26,5 +28,14 @@ export class MedicamentsListeComponent implements OnInit {
 
   getAllMedicaments() {
     this.medicamentService.getAllMedicaments();
+  }
+
+  modal(i){
+    this.index = i;
+    this.unMedicament = this.medicaments[0];
+  }
+
+  getIndex(){
+    return this.index;
   }
 }

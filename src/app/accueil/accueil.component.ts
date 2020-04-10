@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class AccueilComponent implements OnInit {
 
-  authStatus: boolean;
+  authStatus: boolean = false;
   model: any = {};
   visiteurs: any[];
   visiteurSubscription: Subscription;
@@ -28,6 +28,12 @@ export class AccueilComponent implements OnInit {
       }
     );
     this.authService.emitAuthSubject();
+    if(this.GetLogin()){
+      this.authStatus = true;
+    }
+    else{
+      this.authStatus = false;
+    }
   }
 
   getVisiteurById(user) {
@@ -38,9 +44,21 @@ export class AccueilComponent implements OnInit {
     this.getVisiteurById(this.model.username);
     console.log('Tentative de connexion');
     if(this.model.password == this.visiteurs[0].mdp ){
-    localStorage.setItem('user', JSON.stringify({login : this.model.username}));
+    localStorage.setItem('user', JSON.stringify({ prenom: this.visiteurs[0].prenom, nom: this.visiteurs[0].nom}));
     this.router.navigate(['/']);
+    this.authStatus = true;
     }
+  }
+
+  logout() {
+    console.log('Tentative de déconnexion');
+    this.authStatus = false;
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);
+  }
+
+  GetLogin(){
+    return JSON.parse(localStorage.getItem('user')).prenom + " " + JSON.parse(localStorage.getItem('user')).nom;
   }
 
 }

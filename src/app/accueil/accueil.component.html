@@ -8,20 +8,25 @@
                             <p>Bienvenue sur le site GSB</p>
                             <img src="../assets/images/logoGSB.jpg" alt="logoGSB">
                         </div>
-                        <div class="col-md-6">
-                            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                        <div *ngIf="authStatus == false" class="col-md-6">
+                            <form name="form" (ngSubmit)="login()" #f="ngForm" novalidate>
+                                <div class="form-group">
                                   <label for="username">Identifiant</label>
                                   <input type="text" class="form-control" name="username" id="username" [(ngModel)]="model.username" #username="ngModel" placeholder='Saisissez votre identifiant' required />
                                 </div>
-                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                                <div class="form-group">
                                   <label for="password">Mot de passe</label>
                                   <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" placeholder='Saisissez votre mot de passe' required />
                                 </div>
                                 <div class="form-group">
-                                  <button class="btn btn-primary pull-right" [disabled]="!f.form.valid">Connexion</button>
+                                  <button class="btn btn-primary pull-right">Connexion</button>
                                 </div>
                               </form>
+                        </div>
+                        <div *ngIf="authStatus == true" class="col-md-6">
+                          <h1>Vous êtes connecté.</h1>
+                          <h2>Bienvenue {{GetLogin()}}</h2>
+                          <button class="btn btn-primary pull-right" (click)="logout()">Deconnexion</button>
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let medicament of medicaments; let i = index">
-              <th scope="row" ><a data-toggle="modal" data-target="#Modal">{{ medicament.nomCommercial }}</a></th>
+              <th scope="row" ><a data-toggle="modal" data-target="#Modal" (click)='modal(i)'>{{ medicament.nomCommercial }}</a></th>
               <td>{{ medicament.idFamille }}</td>
             </tr>
 
@@ -39,17 +39,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ medicaments[10].nomCommercial }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ medicaments[index].nomCommercial }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p><strong>Famille: </strong>{{ medicaments[10].idFamille }}</p>
-        <p><strong>Dépot légal: </strong>{{ medicaments[10].id }}</p>
-        <p><strong>Composition: </strong>{{ medicaments[10].composition }}</p>
-        <p><strong>Effets secondaire: </strong>{{ medicaments[10].effets }}</p>
-        <p><strong>Contre-indication: </strong>{{ medicaments[10].contreIndications }}</p>
+        <p><strong>Famille: </strong>{{ medicaments[index].idFamille }}</p>
+        <p><strong>Dépot légal: </strong>{{ medicaments[index].id }}</p>
+        <p><strong>Composition: </strong>{{ medicaments[index].composition }}</p>
+        <p><strong>Effets secondaire: </strong>{{ medicaments[index].effets }}</p>
+        <p><strong>Contre-indication: </strong>{{ medicaments[index].contreIndications }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>

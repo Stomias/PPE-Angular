@@ -10,6 +10,7 @@ export class AuthService {
 
   AuthSubject = new Subject<any[]>();
 
+  isAuth: boolean = false;
   private visiteurs: any[] = [];
 
   emitAuthSubject() {

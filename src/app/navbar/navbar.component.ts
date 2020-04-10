@@ -16,17 +16,22 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.getLogin()){
+      this.authStatus = true;
+    }
+    else{
+      this.authStatus = false;
+    }
   }
 
   getLogin() {
-    return JSON.parse(localStorage.getItem('user')).login;
+    return JSON.parse(localStorage.getItem('user')).prenom + " " + JSON.parse(localStorage.getItem('user')).nom;
   }
   
   logout() {
     console.log('Tentative de déconnexion');
-  
     localStorage.removeItem('user');
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 
 }

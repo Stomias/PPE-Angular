@@ -11,17 +11,17 @@
             <li class="nav-item">
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeMedicaments']">Médicaments</a>
+            <a class="nav-link"  *ngIf="authStatus == true" [routerLink]="['ListeMedicaments']">Médicaments</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeMedecins']">Médecins</a>
+            <a class="nav-link"  *ngIf="authStatus == true" [routerLink]="['ListeMedecins']">Médecins</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link"  *ngIf="getLogin()" [routerLink]="['ListeVisites']">Rapports Visite</a>
+            <a class="nav-link"  *ngIf="authStatus == true" [routerLink]="['ListeVisites']">Rapports Visite</a>
             </li>
         </ul>
         
-        <span *ngIf="getLogin()">
+        <span *ngIf="authStatus == true">
             <ul  class="navbar-nav mr-auto">
                 <li class="nav-item dropdown" routerLinkActive="active">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
