@@ -24,13 +24,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let medicament of medicaments; let i = index">
+            <tr *ngFor="let medicament of medicaments | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ; let i = index">
               <th scope="row" ><a data-toggle="modal" data-target="#Modal" (click)='modal(i)'>{{ medicament.nomCommercial }}</a></th>
               <td>{{ medicament.idFamille }}</td>
             </tr>
 
           </tbody>
         </table>
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="medicaments.length" [pageSize]="pageSize" [(page)]="page"></ngb-pagination>
       </div>
     </div>
   </div>
@@ -45,14 +46,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <p><strong>Famille: </strong>{{ medicaments[index].idFamille }}</p>
-        <p><strong>Dépot légal: </strong>{{ medicaments[index].id }}</p>
-        <p><strong>Composition: </strong>{{ medicaments[index].composition }}</p>
-        <p><strong>Effets secondaire: </strong>{{ medicaments[index].effets }}</p>
-        <p><strong>Contre-indication: </strong>{{ medicaments[index].contreIndications }}</p>
+        <form method="POST" action="/modifInfosMedic">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nom Commercial: </label>
+            <input type="text" name="nom" class="form-control" readonly value="{{ medicaments[index].nomCommercial}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Dépot légal: </label>
+            <input type="text" name="depot" class="form-control" value="{{ medicaments[index].id }}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Composition: </label>
+            <input type="text" name="composition" class="form-control" value="{{ medicaments[index].composition }}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Effets secondaire: </label>
+            <textarea class="form-control" name="effet" id="exampleFormControlTextarea1" rows="3">{{ medicaments[index].effets }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Contre-indications: </label>
+            <textarea class="form-control" name="contreIndic" id="exampleFormControlTextarea1" rows="3">{{ medicaments[index].contreIndications }}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>

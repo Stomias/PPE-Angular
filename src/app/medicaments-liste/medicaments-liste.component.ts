@@ -15,6 +15,8 @@ export class MedicamentsListeComponent implements OnInit {
   constructor(private medicamentService: MedicamentService) { }
   index: string = '0';
   unMedicament: any[];
+  page = 1;
+  pageSize = 15;
 
   ngOnInit(): void {
     this.getAllMedicaments();
