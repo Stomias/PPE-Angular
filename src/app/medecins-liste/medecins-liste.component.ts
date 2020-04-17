@@ -10,14 +10,16 @@ import { Subscription } from 'rxjs';
 })
 export class MedecinsListeComponent implements OnInit {
 
-  medecins: any[];
+  medecins: Medecin[];
   medecinSubscription: Subscription;
   constructor(private medecinService: MedecinService) { }
+  page = 1;
+  pageSize = 30;
 
   ngOnInit(): void {
     this.getAllMedecins();
     this.medecinSubscription = this.medecinService.medecinSubject.subscribe(
-      (medecins: any[]) => {
+      (medecins: Medecin[]) => {
         this.medecins = medecins;
       }
     );

@@ -23,7 +23,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let medecin of medecins">
+            <tr *ngFor="let medecin of medecins | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
               <td>{{ medecin.nom }}</td>
               <td>{{ medecin.prenom }}</td>
               <td>{{ medecin.adresse }}</td>
@@ -34,6 +34,8 @@
             </tr>
           </tbody>
         </table>
+
+        <ngb-pagination class="d-flex justify-content-center" [collectionSize]="medecins.length" [pageSize]="pageSize" [(page)]="page"></ngb-pagination>
       </div>
     </div>
   </div>

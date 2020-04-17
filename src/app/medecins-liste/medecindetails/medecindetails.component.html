@@ -3,37 +3,37 @@
     <div class="form">
       <div class="text">
         <p>Modification du médecin</p>
-        <form class="form-container" (ngSubmit)="updateMedecinDetails(this.id[2],this.medecins[0].adresse,this.medecins[0].tel,this.medecins[0].specialitecomplementaire)">
+        <form class="form-container">
           <a routerLink='/ListeMedecins'>
             <button class="backbutton btn btn-primary">Retour</button>
           </a>
           <div class="form-group">
             <label class="placeholder">Nom</label>
-            <input id="nom" class="form-control" value="{{ this.medecins[0].nom }}" readonly>
+            <input name="nom" id="nom" class="form-control" value="{{ this.medecins[0].nom }}" readonly>
           </div>
           <div class="form-group">
             <label class="placeholder">Prénom</label>
-            <input id="prenom" class="form-control" value="{{ this.medecins[0].prenom }}" readonly>
+            <input name="prenom" id="prenom" class="form-control" value="{{ this.medecins[0].prenom }}" readonly>
           </div>
           <div class="form-group">
             <label class="placeholder">Adresse</label>
-            <input id="adresse" class="form-control" value="{{ this.medecins[0].adresse }}">
+            <input name="adresse" id="adresse" class="form-control" value="{{ this.medecins[0].adresse }}">
           </div>
           <div class="form-group">
             <label class="placeholder">N° Téléphone</label>
-            <input id="tel" class="form-control" value="{{ this.medecins[0].tel }}">
+            <input name="tel" id="tel" class="form-control" value="{{ this.medecins[0].tel }}">
           </div>
           <div class="form-group">
             <label class="placeholder">Spécialité complémentaire</label>
-            <input id="specialitecomplementaire" class="form-control" value="{{ this.medecins[0].specialitecomplementaire }}">
+            <input name="specialitecomplementaire" id="specialitecomplementaire" class="form-control" value="{{ this.medecins[0].specialitecomplementaire }}">
           </div>
           <div class="form-group">
             <label class="placeholder">Département</label>
-            <input id="departement" class="form-control" value="{{ this.medecins[0].departement }}" readonly>
+            <input name="departement" id="departement" class="form-control" value="{{ this.medecins[0].departement }}" readonly>
           </div>
           <!-- Affichage de la réussite ou de l'échec de l'envoi -->
           <!-- <p *ngIf="success" class="green">Vos modifications ont été pris en compte !</p> -->
-          <button type="submit" class="submitbutton btn btn-primary">Enregistrer</button>
+          <button type="submit" class="submitbutton btn btn-primary" disabled>Enregistrer</button>
         </form>
       <!-- Améliorer le design -->
       <p>Les rapports de visites du médecin</p>
@@ -55,7 +55,7 @@
             <td>{{ rapport.motif }}</td>
             <td>{{ rapport.bilan }}</td>
             <td>{{ rapport.idVisiteur }}</td>
-            <td><a class="button" routerLink="{{rapport.id}}" disabled><img src="..\assets\images\icons8-more-24.png"/></a></td>
+            <td><a class="button" routerLink=""><img src="..\assets\images\icons8-more-24.png"/></a></td>
           </tr>
         </tbody>
       </table>

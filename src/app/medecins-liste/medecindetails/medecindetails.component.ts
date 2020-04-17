@@ -17,9 +17,12 @@ export class MedecindetailsComponent implements OnInit {
   medecinSubscription: Subscription;
   rapports: Rapport[];
   rapportSubscription: Subscription;
+  medecinFormModel: any = {};
   url = '';
   id = [];
-  constructor(private router: Router, private medecinService: MedecinService, private rapportService: RapportService) { }
+  constructor(private router: Router,
+              private medecinService: MedecinService,
+              private rapportService: RapportService) { }
 
   ngOnInit(): void {
     this.url = this.router.url.toString();
@@ -47,6 +50,7 @@ export class MedecindetailsComponent implements OnInit {
     this.rapportService.getAllRapportMedecin(idMed);
   }
 
+  // Non Utilisé (Enregistrement mis de coté pour le moment : Le bouton a été desactivé pour éviter tout problème)
   updateMedecinDetails(id: string, adresse: string, tel: string, specomplementaire: string) {
     this.medecinService.updateMedecinDetails(id, adresse, tel, specomplementaire);
   }

@@ -41,7 +41,7 @@ export class MedecinService {
   }
 
   updateMedecinDetails(id: string, adresse: string, tel: string, spe: string) {
-    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?id2=${id}&adresse=${adresse}&tel=${tel}&speComplementaire=${spe}/`)
+    this.http.get<any[]>(`https://webserv-gr1.sio-carriat.com/gsbapi/?id2=${id}&adresse=${adresse}&tel=${tel}&speComplementaire=${spe}`)
     .subscribe(
       (response) => {
         this.medecins = response;
