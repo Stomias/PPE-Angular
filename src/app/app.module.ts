@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MedicamentsListeComponent } from './medicaments-liste/medicaments-liste.component';
@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MedecinService } from 'src/app/services/medecin.service';
 import { MedecindetailsComponent } from './medecins-liste/medecindetails/medecindetails.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 // Pagination
 
@@ -42,7 +43,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgbPaginationModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [MedecinService],
   bootstrap: [AppComponent]

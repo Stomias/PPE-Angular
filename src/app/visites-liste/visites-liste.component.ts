@@ -12,6 +12,8 @@ export class VisitesListeComponent implements OnInit {
 
   rapports: Rapport[] = [];
   rapportSubscription: Subscription;
+  searchText: string;
+  tabSearchText: string[];
   constructor(private rapportService: RapportService) { }
   page = 1;
   pageSize = 15;
@@ -28,5 +30,4 @@ export class VisitesListeComponent implements OnInit {
   getAllRapport() {
     this.rapportService.getAllRapport();
   }
-
 }
