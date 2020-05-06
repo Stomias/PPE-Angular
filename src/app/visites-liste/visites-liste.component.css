@@ -1,0 +1,6 @@
+
+.detail:hover {
+  background-color: rgb(180, 180, 180);
+  color: white;
+  cursor: pointer;
+}
